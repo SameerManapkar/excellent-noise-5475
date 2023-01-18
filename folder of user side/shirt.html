@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+    }
+
+    .mainDiv {
+
+        width: 100%;
+        height: 50vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+    .mainContent {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .mainImages {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .mainContent h1 {
+        font-size: 30px;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+
+    .mainContent p {
+        color: rgb(160, 156, 156);
+        text-align: justify;
+        font-weight: 300;
+        font-size: 12px;
+        padding: 0px 110px;
+    }
+
+    .mainImages img {
+        width: 32%;
+        height: 260px;
+    }
+    /* producDiv */
+    #productDiv{
+    
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    height: auto;
+
+    }
+    .leftdiv{
+        width: 20%;
+        background-color: yellow;
+       
+    }
+   
+
+    .rightdiv{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+     
+    }
+    .rightdiv #sort{
+       width: 100%;
+       height: 50px;
+        border-bottom: 1px solid gray;
+    }
+
+    .emptyDiv{
+        width: 100%;
+        height: 10vh;
+        background-color: rgb(201, 197, 197);
+    }
+    /* proShirts */
+    .proShirts{
+        max-width: 100%;
+        padding: 20px 10px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(auto,1fr);
+       gap: 10px;
+    }
+    .proSdiv img{
+        width: 100%;
+    }
+    .content{
+        padding: 10px 0px;
+        line-height: 20px;
+    }
+
+
+</style>
+
+<body>
+    <div class="mainDiv">
+        <div class="mainContent">
+            <h1>MEN'S SHIRTS</h1>
+            <p>Quality fabrics and modern fits are key when it comes to refined essentials. Good news: our stylish men's
+                shirts offer both. Complete your tailored looks with plain or patterned non-iron styles that impress in
+                the boardroom. When the golf club beckons, opt for breathable Polos, crafted with our Tyrwhitt Cool
+                finish.</p>
+        </div>
+        <div class="mainImages">
+            <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw182c8fcd/merchAssets/SS23/TIBs/tib-ss23-shirts-formal.jpg"
+                alt="">
+            <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw516683d3/merchAssets/SS23/TIBs/tib-ss23-shirts-smart-casual.jpg"
+                alt="">
+            <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw6bcaa70b/merchAssets/SS23/TIBs/tib-ss23-shirts-polos.jpg"
+                alt="">
+        </div>
+    </div>
+    <!-- // product of shirts -->
+   <div class="emptyDiv">
+    <h3>Shirts and Polos</h3>
+   </div>
+    <div id="productDiv">
+        <!-- left div -->
+        <div class="leftdiv">
+            <div id="filter">
+                <select name="sorting" id="sorting">
+                    <option value="SortBy">Sort BY</option>
+                    <option value="High to Low">High to Low</option>
+                    <option value="Low to High">Low to High</option>
+                </select>
+            </div>
+        </div>
+        <!-- right div -->
+
+        <div class="rightdiv">
+            <div id="sort">
+                <select name="sorting" id="sorting">
+                    <option value="SortBy">Sort BY</option>
+                    <option value="High to Low">High to Low</option>
+                    <option value="Low to High">Low to High</option>
+                </select>
+            </div>
+
+            <!-- products -->
+            <div id="proShirts" class="proShirts">
+                <div class="proSdiv">
+                    <div class="img">
+                        <img src="https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw481fd26b/FON0540NWH_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42" alt="">
+                    </div>
+                    <div class="content">
+                        <p>spread coller non-iron</p>
+                        <h6>$99</h6>
+                        <p>$59.75 multibuy</p>
+                    </div>
+                </div>
+                <div class="proSdiv">
+                    <div class="img">
+                        <img src="https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw481fd26b/FON0540NWH_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42" alt="">
+                    </div>
+                    <div class="content">
+                        <p>spread coller non-iron</p>
+                        <h6>$99</h6>
+                        <p>$59.75 multibuy</p>
+                    </div>
+                </div>
+                <div class="proSdiv">
+                    <div class="img">
+                        <img src="https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw481fd26b/FON0540NWH_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42" alt="">
+                    </div>
+                    <div class="content">
+                        <p>spread coller non-iron</p>
+                        <h6>$99</h6>
+                        <p>$59.75 multibuy</p>
+                    </div>
+                </div>
+                <div class="proSdiv">
+                    <div class="img">
+                        <img src="https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw481fd26b/FON0540NWH_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42" alt="">
+                    </div>
+                    <div class="content">
+                        <p>spread coller non-iron</p>
+                        <h6>$99</h6>
+                        <p>$59.75 multibuy</p>
+                    </div>
+                </div>
+                <div class="proSdiv">
+                    <div class="img">
+                        <img src="https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw481fd26b/FON0540NWH_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42" alt="">
+                    </div>
+                    <div class="content">
+                        <p>spread coller non-iron</p>
+                        <h6>$99</h6>
+                        <p>$59.75 multibuy</p>
+                    </div>
+                </div>
+                <div class="proSdiv">
+                    <div class="img">
+                        <img src="https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw481fd26b/FON0540NWH_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42" alt="">
+                    </div>
+                    <div class="content">
+                        <p>spread coller non-iron</p>
+                        <h6>$99</h6>
+                        <p>$59.75 multibuy</p>
+                    </div>
+                </div>
+                <div class="proSdiv">
+                    <div class="img">
+                        <img src="https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw481fd26b/FON0540NWH_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42" alt="">
+                    </div>
+                    <div class="content">
+                        <p>spread coller non-iron</p>
+                        <h6>$99</h6>
+                        <p>$59.75 multibuy</p>
+                    </div>
+                </div>
+                <div class="proSdiv">
+                    <div class="img">
+                        <img src="https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw481fd26b/FON0540NWH_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42" alt="">
+                    </div>
+                    <div class="content">
+                        <p>spread coller non-iron</p>
+                        <h6>$99</h6>
+                        <p>$59.75 multibuy</p>
+                    </div>
+                </div>
+                <div class="proSdiv">
+                    <div class="img">
+                        <img src="https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw481fd26b/FON0540NWH_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42" alt="">
+                    </div>
+                    <div class="content">
+                        <p>spread coller non-iron</p>
+                        <h6>$99</h6>
+                        <p>$59.75 multibuy</p>
+                    </div>
+                </div>
+                <div class="proSdiv">
+                    <div class="img">
+                        <img src="https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw481fd26b/FON0540NWH_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42" alt="">
+                    </div>
+                    <div class="content">
+                        <p>spread coller non-iron</p>
+                        <h6>$99</h6>
+                        <p>$59.75 multibuy</p>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
