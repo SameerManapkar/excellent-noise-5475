@@ -24,6 +24,7 @@
     function bigImg(){
         shirtsInfo.style.visibility = "visible"
         shirtsInfo.style.height="auto"
+        // shirtsInfo.body.style.background.filter = "blur(4px)";
     }
     function suits(){
         suit.style.height="auto"
@@ -51,3 +52,4 @@
         accsInfo.style.height="auto"
         accsInfo.style.visibility="visible"
     }
+leaves()

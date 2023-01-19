@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Signup</title>
     <link rel="stylesheet" href="style\navbar.css">
     <style>
         #accForm{
@@ -19,7 +19,7 @@
         #mainDetail{
             
             color: #001f49;
-            line-height: 30px;
+            /* line-height: 30px; */
             width: 70%;
             margin: 30px auto;
         }
@@ -54,7 +54,18 @@
             width: 100%;
             height: 35px;
             padding: 5px;
-            margin: 5px 0px;
+            margin: 5px 0px 20px 0px;
+        }
+        .secOptions{
+            display: flex;
+            background-color: #f7f7f7;
+            border: solid 1px grey;
+            padding: 10px;
+            margin:  10px 0px;
+            height: 60px;
+        }
+        .secOptions > img{
+            height: 50px;
         }
     </style>
 </head>
@@ -452,16 +463,38 @@
     </div>
   </div>
   <div id="mainDetail">
-    <h2>My account</h2>
+    <h2>Create account</h2>
     <div id="accForm">
         <div>
             <form id="myform">
-                <p>Email address</p>
-                <input id="email" type="text">
-                <p>Password</p>
-                <input id="password" type="password"><br>
+                <p> First name</p>
+                <input id="fname" type="text">
+                <p>Last name</p>
+                <input id="lname" type="text">
+                
+                <p>Email Address</p>
+                <input type="text"  id="email">
+
+                <p>Password (your password should be atleast 8 charachters in length</p>
+                <input type="password" id="password">
+
+                <p>Phone</p>
+                <p>Well only use this to contact you order or to send you SMS about your delivery</p>
+                <input type="number"  id="phone">
+                
                 <div>
-                    <input class="btn" type="submit" value="LOG IN" >
+                    <input type="checkbox" name="check1" id="check1">
+                    <label for="check1">Email About offers our  exting new ranges</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="check2" id="check2">
+                    <label for="check2">If you'd prefer offers and our exting new ranges.</label>
+                </div>
+
+                <p>By creating an account with ClothesNite, you have read and accepts our <u>Terms and Condition</u>and <u>See Privacy Policy</u></p>
+                <br>
+                <div>
+                    <input class="btn" type="submit" value="CREATE AN ACCOUNT" >
                 </div>
                 
             </form>
@@ -469,22 +502,23 @@
         </div>
 
         <div id="secMain">
-            <h3>New customers</h3>
-            <p>Set up an account with us and you will be able to:</p>
-            <span>
-                <img src="https://www.charlestyrwhitt.com/on/demandware.static/Sites-CTShirts-US-Site/-/default/dwdb6da176/images/svg-icons/order_history.svg" alt="">
-                <p>Check order status</p>
-            </span>
-            <span>
-                <img src="https://www.charlestyrwhitt.com/on/demandware.static/Sites-CTShirts-US-Site/-/default/dw3a36da3a/images/svg-icons/address_book.svg" alt="">
-                <p>Save multiple addresses to your book</p>
-            </span>
-            <span>
-                <img src="https://www.charlestyrwhitt.com/on/demandware.static/Sites-CTShirts-US-Site/-/default/dw2ed88bb6/images/svg-icons/personal_details.svg" alt="">
-                <p>Set your size and monogramming prefences</p>
-            </span>
-            <div onclick="openSignup()" class="btn2">
-                CREATE AN ACCOUNT NOW
+            <div class="secOptions">
+                <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw35ca6cf0/images/Guarantee.svg" alt="">
+                <div>
+                    <b>6 MONTHS GAURANTEE</b>
+                    <P>Exchange or return your purchase up to 6 months after reciept</P>
+                </div>
+            </div>
+            <div class="secOptions">
+                <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwb801377e/images/Security.svg" alt="">
+                <div>
+                    <b>100% SECURE</b>
+                    <P>Shopping is secure with ClothesNite</P>
+                </div>
+            </div>
+            <h2>HAVE AN ACCOUNT</h2>
+            <div class="btn2" onclick="openLogin()">
+                CLICK HERE TO LOG IN
             </div>
         </div>
 
@@ -500,8 +534,8 @@
 <script src="js\navbar.js"></script>
 <script>
 
-    function openSignup(){
-        window.open("signup.html","_self")
+    function openLogin(){
+        window.open("login.html","_self")
     }
 
     let loginData = JSON.parse(localStorage.getItem("loginData"))||[];
@@ -510,29 +544,51 @@
 
     myform.addEventListener("submit",function(event){
         event.preventDefault();
-        let login = false;
-        let email = document.getElementById("email").value;
-        let password = document.getElementById("password").value;
-        loginData.forEach(element => {
-            if(email == element.email && element.password == password){
-            login = true;
+        console.log(myform.password.value);
+        
+        let check = true;
+            loginData.forEach(element => {
+              if(element.email == myform.email.value){
+                check = false;
+              }  
+            });
+        console.log(check,loginData);
+        // let check1 = document.getElementById("check1");
+        // let check2 = document.getElementById("check2");
+        if(check){
+            if(myform.password.value.length >= 8 ){
+            if(myform.check1.checked == true && myform.check2.checked == true){
+
+
+            let obj = {
+                fname: myform.fname.value,
+                lname : myform.lname.value,
+                email : myform.email.value,
+                password : myform.password.value,
+                phone : myform.phone.value
+                }
+                // console.log(obj);
+                loginData.push(obj)
+                localStorage.setItem("loginData",JSON.stringify(loginData))
+                window.open("login.html","_self")
             }
-        });
-       
-        console.log(login,email,password);
-        if(login === true){
-            alert("Login successful");
-            redirectHome()
+            else{
+                alert("Accept terms and condition")
+            }
         }
         else{
-            alert("Invalid Credentials")
+            alert("Password must contain at least 8 charector ")
         }
-
+        }
+        else{
+            alert("This account already signed in please login")
+        }
         
+     
     })
-    console.log(loginData);
-   function redirectHome(){
+    function redirectHome(){
     window.open("../index.html","_self")
    }
 
+   
 </script>
