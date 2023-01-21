@@ -500,6 +500,12 @@
 <script src="js\navbar.js"></script>
 <script>
 
+let loginStatus = localStorage.getItem("loginStatus")||null
+
+if( loginStatus == true){
+    alert("Your Already Logined")
+    redirectHome()
+}
     function openSignup(){
         window.open("signup.html","_self")
     }
@@ -522,6 +528,7 @@
         console.log(login,email,password);
         if(login === true){
             alert("Login successful");
+            localStorage.setItem("loginStatus",true)
             redirectHome()
         }
         else{

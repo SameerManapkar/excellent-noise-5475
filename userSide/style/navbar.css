@@ -105,3 +105,31 @@
 .secNavImg > img{
     height: 200px;
 }
+.searchProduct > img{
+    height: 100px;
+}
+.searchProduct{
+    display: flex;
+    margin: 10px;
+    gap: 20px;
+}
+#appedSearch{
+    position: absolute;
+    background-color: #f7f7f7;
+    margin-left: 60%;
+    margin-top: -80px;
+    border-radius: 10px;
+    padding: 30px;
+    /* padding-top: 50px; */
+    opacity: 0.9;
+    height: 800px;
+    visibility: hidden;
+    overflow: scroll;
+}
+#closeSearch{
+    margin-top: -23px;
+    margin-left: -23px;
+    /* margin-bottom: 30px; */
+    height: 30px;
+    position: fixed;
+}
